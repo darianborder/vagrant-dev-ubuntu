@@ -4,8 +4,7 @@
 Vagrant.configure('2') do |config|
 
   # Base box (from Hashicorp Atlas)
-  # config.vm.box = 'boxcutter/ubuntu1604-desktop'
-  config.vm.box = 'mast3rof0/lubuntu64'
+  config.vm.box = 'ubuntu/trusty64'
 
   # Assign this VM a unique hostname
   config.vm.host_name = "#{ENV['USER']}.dev.ubuntu64.vagrantup.com"
@@ -37,28 +36,13 @@ Vagrant.configure('2') do |config|
   config.vm.network 'forwarded_port', guest: 3000, host: 3000, auto_correct: true # Web server
   config.vm.network 'forwarded_port', guest: 8083, host: 8083, auto_correct: true # Web server
 
-  # Share a folder to the VM (host path, guest path)
-  config.vm.synced_folder 'share', '/vagrant-share'
-
   config.vm.provider 'virtualbox' do |vb|
-    # Boot with a GUI so you can see the screen. (Default is headless)
-    vb.gui = true
-
     # Set name of VirtualBox VM
     vb.name = 'dev-ubuntu64'
 
     # Set memory allocated to the VM in MB
-    vb.customize ['modifyvm', :id, '--memory', '4096']
-    vb.customize ['modifyvm', :id, '--cpus', '2']
-    vb.customize ['modifyvm', :id, '--vram', '128']
-    vb.customize ['modifyvm', :id, '--accelerate2dvideo', 'off']
-    vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
-
-    # Enable shared clipboard
-    vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
-
-    # Suppress some VirtualBox messages
-    vb.customize ['setextradata', :id, 'GUI/SuppressMessages', 'remindAboutAutoCapture,remindAboutWrongColorDepth,remindAboutMouseIntegrationOn,remindAboutMouseIntegrationOff,confirmInputCapture,confirmGoingFullscreen']
+    vb.customize ['modifyvm', :id, '--memory', '1024']
+    vb.customize ['modifyvm', :id, '--cpus', '1']
 
     # Make DNS work across host VPN connection
     vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']

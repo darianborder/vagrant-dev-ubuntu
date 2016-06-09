@@ -10,19 +10,6 @@
     - include: ./tasks/nvm.yml
     - include: ./tasks/vim-pathogen.yml
     - include: ./tasks/vim-theme-atom-dark.yml
-    - include: ./tasks/vimx.yml
-    - include: ./tasks/atom.yml
-    - include: ./tasks/atom-packages-generic.yml
-    - include: ./tasks/atom-packages-java.yml
-    - include: ./tasks/atom-packages-nodejs.yml
-    - include: ./tasks/atom-packages-web.yml
-    - include: ./tasks/kupfer.yml
-    - include: ./tasks/leafpad.yml
-    - include: ./tasks/lxterminal.yml
-    - include: ./tasks/chromium.yml
-    # - include: ./tasks/google-chrome.yml
+    - include: ./tasks/vim.yml
     - include: ./tasks/oraclejdk8.yml
     # - include: ./tasks/openjdk8.yml
-    - include: ./tasks/microsoft-fonts.yml
-    - include: ./tasks/open-sans.yml
-    - include: ./tasks/ideaIC.yml
