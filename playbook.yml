@@ -11,5 +11,6 @@
     - include: ./tasks/vim-pathogen.yml
     - include: ./tasks/vim-theme-atom-dark.yml
     - include: ./tasks/vim.yml
+    - include: ./tasks/dos2unix.yml
     - include: ./tasks/oraclejdk8.yml
     # - include: ./tasks/openjdk8.yml

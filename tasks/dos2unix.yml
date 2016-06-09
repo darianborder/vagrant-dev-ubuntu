@@ -1,0 +1,3 @@
+---
+- apt: pkg=dos2unix
+
