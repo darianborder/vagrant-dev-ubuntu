@@ -14,3 +14,5 @@
     - include: ./tasks/dos2unix.yml
     - include: ./tasks/oraclejdk8.yml
     # - include: ./tasks/openjdk8.yml
+    - include: ./tasks/inotifylimit.yml
+    
