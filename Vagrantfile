@@ -4,7 +4,8 @@
 Vagrant.configure('2') do |config|
 
   # Base box (from Hashicorp Atlas)
-  config.vm.box = 'ubuntu/trusty64'
+  #config.vm.box = 'ubuntu/trusty64'
+  config.vm.box = 'boxcutter/ubuntu1604'
 
   # Assign this VM a unique hostname
   config.vm.host_name = "#{ENV['USER']}.dev.ubuntu64.vagrantup.com"

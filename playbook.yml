@@ -15,4 +15,5 @@
     - include: ./tasks/oraclejdk8.yml
     # - include: ./tasks/openjdk8.yml
     - include: ./tasks/inotifylimit.yml
+    - include: ./tasks/docker-engine.yml
     
