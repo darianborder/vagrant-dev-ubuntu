@@ -40,9 +40,12 @@ Vagrant.configure('2') do |config|
   config.vm.network 'forwarded_port', guest: 35729, host: 35729, auto_correct: true # Web server
   
   # Shared folder for projects
-  config.vm.synced_folder "../citizenship-appointment-client/", "/home/vagrant/shared/citizenship-appointment-client"
-  config.vm.synced_folder "../citizenship-appointment-server/", "/home/vagrant/shared/citizenship-appointment-server"
+  #config.vm.synced_folder "../citizenship-appointment-client/", "/home/vagrant/shared/citizenship-appointment-client"
+  #config.vm.synced_folder "../citizenship-appointment-server/", "/home/vagrant/shared/citizenship-appointment-server"
 
+  config.vm.synced_folder "../citizenship-appointment-client", "/home/vagrant/shared/citizenship-appointment-client", type: "rsync", rsync__exclude: ".git/"
+  config.vm.synced_folder "../citizenship-appointment-server", "/home/vagrant/shared/citizenship-appointment-server", type: "rsync", rsync__exclude: ".git/"  
+  
   config.vm.provider 'virtualbox' do |vb|
     # Set name of VirtualBox VM
     vb.name = 'dev-ubuntu64'
